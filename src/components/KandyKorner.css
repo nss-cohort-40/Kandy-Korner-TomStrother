@@ -1,20 +1,12 @@
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.homeHeaderName {
+  text-shadow: 10px 10px 10px black;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.home {
+  background-color: #48386d;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -24,15 +16,17 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.formgrid {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 400px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.loginEmailBox {
+  margin: 10px;
+}
+
+.loginPasswordBox {
+  margin: 10px;
 }

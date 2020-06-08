@@ -1,0 +1,19 @@
+.ProductCard {
+  background: rgb(255, 188, 255);
+  border: solid black 2px;
+  padding: 4px;
+  margin: 4px;
+  max-width: 300px;
+  border-radius: 5px;
+}
+
+.container-cards {
+  display: flex;
+  flex-wrap: wrap;
+  min-width: fit-content;
+}
+
+.productDetailsBtn {
+  margin: 5px;
+  padding: 5px;
+}

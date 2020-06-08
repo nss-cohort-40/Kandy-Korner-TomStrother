@@ -2,11 +2,6 @@ small {
   font-size: 75%;
 }
 
-header {
-  background-color: darkblue;
-  border: cornflowerblue solid 3px;
-}
-
 .site-title {
   color: ghostwhite;
   text-align: center;
@@ -15,27 +10,47 @@ header {
 nav .container {
   display: flex;
   flex-wrap: wrap;
-  padding: 0;
+  padding: 10px;
   margin-bottom: 0;
+  border: black 2px solid;
 }
 
 nav .container li {
   flex: 1;
   padding: 10px;
-  text-align: center;
+  text-align: left;
   font-size: 1.5em;
   color: cornsilk;
   box-sizing: border-box;
-  background-color: red;
   list-style-type: none;
 }
 
 .nav-link {
-  color: cornsilk;
+  color: black;
   text-decoration: underline;
   cursor: pointer;
+  /* background-color: red; */
+  border: solid black 2px;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 160px;
+  height: 80px;
+  background: #65caf1;
+  border-radius: 50%;
 }
 
 .nav-link:hover {
   color: maroon;
+}
+
+.navbarLogo {
+  display: flex;
+  border: black solid 2px;
+}
+
+a:link {
+  /* Essentially means a[href], or that the link actually goes somewhere */
+  color: red;
 }

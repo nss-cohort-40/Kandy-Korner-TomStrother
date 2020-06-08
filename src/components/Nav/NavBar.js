@@ -10,65 +10,37 @@ const NavBar = (props) => {
   };
 
   return (
-    <header>
-      <h1 className="site-title">
-        Student Kennels
-        <br />
-        <small>Loving care when you're not there.</small>
-      </h1>
-      <nav>
+    <nav className="contentLeft">
+      {props.hasUser ? (
         <ul className="container">
+          <div className="navbarLogo">Logo Here</div>
           <li>
-            <Link className="nav-link" to="/">
-              Home
+            <Link className="nav-link" to="/products">
+              {" "}
+              Products{" "}
             </Link>
           </li>
-          {props.hasUser ? (
-            <li>
-              <Link className="nav-link" to="/animals">
-                {" "}
-                Animals{" "}
-              </Link>
-            </li>
-          ) : null}
           <li>
-            <Link className="nav-link" to="/locations">
-              Locations
+            <Link className="nav-link" to="/employees">
+              {" "}
+              Employees{" "}
             </Link>
           </li>
-          {props.hasUser ? (
-            <li>
-              <Link className="nav-link" to="/employees">
-                {" "}
-                Employees{" "}
-              </Link>
-            </li>
-          ) : null}
-          {props.hasUser ? (
-            <li>
-              <Link className="nav-link" to="/owners">
-                {" "}
-                Owners{" "}
-              </Link>
-            </li>
-          ) : null}
-          {props.hasUser ? (
-            <li>
-              <span className="nav-link" onClick={handleLogout}>
-                {" "}
-                Logout{" "}
-              </span>
-            </li>
-          ) : (
-            <li>
-              <Link className="nav-link" to="/login">
-                Login
-              </Link>
-            </li>
-          )}
+          <li>
+            <Link className="nav-link" to="/employees">
+              {" "}
+              Locations{" "}
+            </Link>
+          </li>
+          <li>
+            <span className="nav-link" onClick={handleLogout}>
+              {" "}
+              Logout{" "}
+            </span>
+          </li>
         </ul>
-      </nav>
-    </header>
+      ) : null}
+    </nav>
   );
 };
 

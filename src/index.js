@@ -2,12 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom";
 import "./components/KandyKorner.css";
-import App from "./components/KandyKorner";
+import KandyKornerHome from "./components/KandyKorner";
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <App />
+      <KandyKornerHome />
     </Router>
   </React.StrictMode>,
   document.getElementById("root")

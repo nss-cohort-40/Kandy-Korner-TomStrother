@@ -2,15 +2,13 @@
   "products": [
     {
       "id": 1,
-      "name": "Pink Gummy Bears",
-      "price": "3.99",
-      "productTypeId": 2
+      "name": "Yellow Gummy Bears",
+      "price": "900,000"
     },
     {
       "id": 2,
-      "name": "Houchen's Favorite Licorice",
-      "price": "60.95",
-      "productTypeId": 4
+      "name": "Toms Favorite Licorice",
+      "price": "1,000,000"
     },
     {
       "id": 3,
@@ -32,9 +30,8 @@
     },
     {
       "id": 6,
-      "name": "Jolly Developer",
-      "price": "65,000.00",
-      "productTypeId": 3
+      "name": "Jolly Developers",
+      "price": "65,000.00"
     },
     {
       "id": 7,
@@ -47,6 +44,12 @@
       "name": "Chocolate Tux",
       "price": "3.89",
       "productTypeId": 1
+    },
+    {
+      "id": 9,
+      "name": "My Favorite",
+      "price": "45.65",
+      "productTypeId": ""
     }
   ],
   "productTypes": [

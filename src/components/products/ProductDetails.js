@@ -4,6 +4,15 @@ import DataManager from "../../modules/DataManger";
 
 const ProductDetail = (props) => {
   const [product, setProduct] = useState({ name: "", price: "" });
+  const [isLoading, setIsLoading] = useState(true);
+
+  const handleDelete = () => {
+    //invoke the delete function in AnimalManger and re-direct to the animal list.
+    setIsLoading(true);
+    DataManager.delete(props.productId).then(() =>
+      props.history.push("/products")
+    );
+  };
 
   useEffect(() => {
     DataManager.get(props.productId).then((product) => {
@@ -11,6 +20,7 @@ const ProductDetail = (props) => {
         name: product.name,
         price: product.price,
       });
+      setIsLoading(false);
     });
   }, [props.productId]);
 
@@ -20,11 +30,14 @@ const ProductDetail = (props) => {
         <h3>
           Item: <span>{product.name}</span>
         </h3>
-        <p>Price: {product.price}</p>
+        <p>Price: ${product.price}</p>
         <p>Location: {product.location}</p>
-        <Link to={`/products/${product.id}`}>
+        <Link to={`/products/${props.productId}/form`}>
           <button>Edit</button>
         </Link>
+        <button type="button" disabled={isLoading} onClick={handleDelete}>
+          Delete Item
+        </button>
       </div>
     </div>
   );

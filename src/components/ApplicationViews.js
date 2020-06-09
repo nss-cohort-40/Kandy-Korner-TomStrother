@@ -3,6 +3,7 @@ import React from "react";
 import Home from "./home/Home";
 import ProductList from "./products/ProductList";
 import ProductDetail from "./products/ProductDetails";
+import ProductForm from "./products/ProductForm";
 
 const ApplicationViews = (props) => {
   const hasUser = props.hasUser;
@@ -22,7 +23,12 @@ const ApplicationViews = (props) => {
         path="/products"
         render={(props) => {
           if (hasUser) {
-            return <ProductList {...props} />;
+            return (
+              <ProductList
+                productId={props.match.params.productId}
+                {...props}
+              />
+            );
           } else {
             return <Redirect to="/" />;
           }
@@ -38,6 +44,21 @@ const ApplicationViews = (props) => {
               {...props}
             />
           );
+        }}
+      />
+      <Route
+        path="/products/:productId(\d+)/form"
+        render={(props) => {
+          if (hasUser) {
+            return (
+              <ProductForm
+                productId={parseInt(props.match.params.productId)}
+                {...props}
+              />
+            );
+          } else {
+            return <Redirect to="/login" />;
+          }
         }}
       />
     </>

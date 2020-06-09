@@ -6,6 +6,20 @@ import "../styles/style.css";
 const ProductList = (props) => {
   const [products, setProducts] = useState([]);
 
+  const addNewProduct = () => {
+    const newProduct = {
+      id: "",
+      name: "",
+      price: "",
+      productTypeId: "",
+      // location: product.location,
+    };
+
+    DataManager.post(newProduct).then((newProductFromDb) =>
+      props.history.push(`/products/${newProductFromDb.id}/form`)
+    );
+  };
+
   const getProducts = () => {
     return DataManager.getAll().then((productsFromAPI) => {
       setProducts(productsFromAPI);
@@ -22,9 +36,7 @@ const ProductList = (props) => {
         <button
           type="button"
           className="productDetailsBtn"
-          onClick={() => {
-            props.history.push("/products/new");
-          }}
+          onClick={addNewProduct}
         >
           Add Product
         </button>

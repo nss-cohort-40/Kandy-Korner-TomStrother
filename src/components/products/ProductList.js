@@ -11,8 +11,6 @@ const ProductList = (props) => {
       id: "",
       name: "",
       price: "",
-      productTypeId: "",
-      // location: product.location,
     };
 
     DataManager.post(newProduct).then((newProductFromDb) =>
@@ -21,7 +19,8 @@ const ProductList = (props) => {
   };
 
   const getProducts = () => {
-    return DataManager.getAll().then((productsFromAPI) => {
+    return DataManager.getAll("products").then((productsFromAPI) => {
+      console.log(productsFromAPI);
       setProducts(productsFromAPI);
     });
   };

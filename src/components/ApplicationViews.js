@@ -4,6 +4,8 @@ import Home from "./home/Home";
 import ProductList from "./products/ProductList";
 import ProductDetail from "./products/ProductDetails";
 import ProductForm from "./products/ProductForm";
+import EmployeeList from "./employees/EmployeeList";
+import EmployeeDetail from "./employees/EmployeeDetails";
 
 const ApplicationViews = (props) => {
   const hasUser = props.hasUser;
@@ -59,6 +61,34 @@ const ApplicationViews = (props) => {
           } else {
             return <Redirect to="/login" />;
           }
+        }}
+      />
+      <Route
+        exact
+        path="/employees"
+        render={(props) => {
+          if (hasUser) {
+            return (
+              <EmployeeList
+                employeeId={props.match.params.employeeId}
+                {...props}
+              />
+            );
+          } else {
+            return <Redirect to="/" />;
+          }
+        }}
+      />
+      <Route
+        exact
+        path="/employees/:employeeId(\d+)"
+        render={(props) => {
+          return (
+            <EmployeeDetail
+              employeeId={parseInt(props.match.params.employeeId)}
+              {...props}
+            />
+          );
         }}
       />
     </>

@@ -20,7 +20,6 @@ const ProductList = (props) => {
 
   const getProducts = () => {
     return DataManager.getAll("products").then((productsFromAPI) => {
-      console.log(productsFromAPI);
       setProducts(productsFromAPI);
     });
   };

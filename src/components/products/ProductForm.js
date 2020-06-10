@@ -54,7 +54,6 @@ const ProductForm = (props) => {
               value={product.name}
             />
             <label htmlFor="name">product name</label>
-
             <input
               type="text"
               required

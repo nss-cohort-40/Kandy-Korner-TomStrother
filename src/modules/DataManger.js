@@ -1,11 +1,13 @@
 const remoteURL = "http://localhost:5002";
 
 export default {
-  get(id) {
-    return fetch(`${remoteURL}/products/${id}`).then((result) => result.json());
+  get(id, resource, expand) {
+    return fetch(`${remoteURL}/${resource}/${id}${expand}`).then((result) =>
+      result.json()
+    );
   },
-  getAll() {
-    return fetch(`${remoteURL}/products`).then((result) => result.json());
+  getAll(resource) {
+    return fetch(`${remoteURL}/${resource}`).then((result) => result.json());
   },
   delete(id) {
     return fetch(`${remoteURL}/products/${id}`, {

@@ -15,10 +15,11 @@ const ProductDetail = (props) => {
   };
 
   useEffect(() => {
-    DataManager.get(props.productId).then((product) => {
+    DataManager.get(props.productId, "products", "").then((product) => {
       setProduct({
         name: product.name,
         price: product.price,
+        location: product.location,
       });
       setIsLoading(false);
     });

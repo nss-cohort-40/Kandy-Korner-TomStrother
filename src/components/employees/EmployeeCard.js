@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "../styles/style.css";
 
 const EmployeeCard = (props) => {
+  console.log(props.employee);
   return (
     <div className="EmployeeCard">
       <div className="card-content">

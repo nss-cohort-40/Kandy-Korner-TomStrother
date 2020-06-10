@@ -6,6 +6,7 @@ import ProductDetail from "./products/ProductDetails";
 import ProductForm from "./products/ProductForm";
 import EmployeeList from "./employees/EmployeeList";
 import EmployeeDetail from "./employees/EmployeeDetails";
+import LocationList from "./locations/LocationList";
 
 const ApplicationViews = (props) => {
   const hasUser = props.hasUser;
@@ -89,6 +90,22 @@ const ApplicationViews = (props) => {
               {...props}
             />
           );
+        }}
+      />
+      <Route
+        exact
+        path="/locations"
+        render={(props) => {
+          if (hasUser) {
+            return (
+              <LocationList
+                locationId={props.match.params.locationId}
+                {...props}
+              />
+            );
+          } else {
+            return <Redirect to="/" />;
+          }
         }}
       />
     </>
